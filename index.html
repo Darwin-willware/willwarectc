@@ -9,13 +9,26 @@
 <body>
     <h1 class = "title">WILLWARE TECHNOLOGIES</h1>
     <h3 class = "subtitle">CTC CALCULATOR</h3>
-    <div class = "center">
-        <input class = "input-field" type="number" id = "takehome" 
-        placeholder="Enter takehome" value = "">
-        <button class="btn" onclick="calculatectc()">CTC</button>
-        <br>
-        <p class="titl">Thus the average CTC is    <span class="spanner" id = "tds" >0</span></p>
+    <div class = "container">
+        <div class = "center">
+            <input class = "input-field" type="number" id = "takehome" 
+            placeholder="Enter takehome" value = "">
+            <button class="btn" onclick="calculatectc()">CTC</button>
+            <br>
+            <p class="titl">Thus the average CTC is    <span class="spanner" id = "tds" >0</span></p>
+        </div>
+        <div class = "center">
+            <input class = "input-field" type="number" id = "ctc" 
+            placeholder="Enter CTC" value = "">
+            <input class = "input-field" type="number" id = "percentage" 
+            placeholder="Enter %" value = "">
+            <button class="btn" onclick="calculatehike()">CTC</button>
+            <br>
+            <p class="titl">Thus the New CTC is    <span class="spanner" id = "newctc" >0</span></p>
+            <p class="titl">Thus the Amount Need To Be hiked is    <span class="spanner" id = "hikeamount" >0</span></p>
+        </div>
     </div>
+   
 
     <script src="./one.js"></script>
 </body>

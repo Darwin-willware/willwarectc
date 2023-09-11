@@ -39,7 +39,7 @@ h3{
     
     font-weight: 600;
   border: none;
-  padding: 12px 20px;
+  padding: 12px 12px;
   margin: 8px 0;
   display: inline-block;
   border: 1px solid #ccc;
@@ -70,12 +70,21 @@ h3{
     color: var(--clr-indigo);
     background-color: aliceblue;
     border-radius: 8px;
-    padding:10px 20px;
-    margin: 20px;
+    padding:20px 20px;
+
+    
+    margin-top: 20px;
     padding-top: 20px;
 }
 .spanner{
     color: var(--clr-indigo);
     background-color: aliceblue;
     color: #1e293b;
+}
+.container{
+    display: flex;
+    flex-direction: row;
+    gap: 48px;
+    justify-content: center;
+    
 }
