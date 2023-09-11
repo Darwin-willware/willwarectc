@@ -88,3 +88,45 @@ h3{
     justify-content: center;
     
 }
+@media(max-width:475px){
+    .container{
+        display: flex;
+        flex-direction: column;
+        gap: 18px;
+        justify-content: center;
+        
+    }
+    .titl{
+        color: var(--clr-indigo);
+        background-color: aliceblue;
+        border-radius: 8px;
+        padding:10px 10px;
+        
+    margin-left: 100px;
+    margin-right: 100px;
+        
+        margin-top: 20px;
+        padding-top: 20px;
+    }
+}
+@media(max-width:640px){
+    .container{
+        display: flex;
+        flex-direction: column;
+        gap: 28px;
+        justify-content: center;
+        
+    }
+    .titl{
+        color: var(--clr-indigo);
+        background-color: aliceblue;
+        border-radius: 8px;
+        padding:10px 10px;
+        
+    margin-left: 100px;
+    margin-right: 100px;
+        
+        margin-top: 20px;
+        padding-top: 20px;
+    }
+}
