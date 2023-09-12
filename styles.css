@@ -71,10 +71,25 @@ h3{
     background-color: aliceblue;
     border-radius: 8px;
     padding:20px 20px;
-
-    
     margin-top: 20px;
     padding-top: 20px;
+}
+.pastecontent{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-collapse: separate;
+    border-radius: 18px;
+    overflow: hidden;
+    perspective: 1px;
+
+}
+.pastecontent p,span{
+    color: var(--clr-indigo);
+    background-color: aliceblue;
+    border-collapse: separate;
+    
 }
 .spanner{
     color: var(--clr-indigo);
