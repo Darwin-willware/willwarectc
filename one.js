@@ -59,7 +59,8 @@ function calculatetakehome(){
   taketohome= (90*currentCtc)/100;
     
     document.getElementById("takehome").value = taketohome;
-     
+    document.getElementById("tds").innerHTML = currentCtc.toLocaleString("en-us");
+    document.getElementById("roundoff").innerHTML = currentCtc.toLocaleString("en-us");
   display(taketohome,currentCtc);
   
   
