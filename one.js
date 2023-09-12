@@ -38,7 +38,7 @@ let recruiterName ='';
           document.getElementById("roundoff").innerHTML = roundoff.toLocaleString("en-us");
     }
     display(takehome,roundoff);
-
+    copytext();
 }
  function calculatehike(){
 //ctc/100 * percentage
@@ -70,5 +70,20 @@ document.getElementById("cname").innerHTML = candidateName;
 document.getElementById("rname").innerHTML = recruiterName;
 document.getElementById("octc").innerHTML = ctcto;
 document.getElementById("thome").innerHTML = takeh;
+
+ }
+ function copytext(){
+  if(candidateName === '' || recruiterName === ''){
+       return 0;
+  }else{
+    var copyText = document.getElementById("copytext").innerText;
+  console.log(document.getElementById("copytext").innerText);
+  //copyText.select();
+  //copyText.setSelectionRange(0, 99999); 
+
+   // Copy the text inside the text field
+  navigator.clipboard.writeText(copyText);
+  }
+  
 
  }
