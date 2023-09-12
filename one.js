@@ -1,44 +1,70 @@
 let takehome = 0;
 let tds =0;
+let ctc= 0;
 let newctc =0;
 let hikeamount = 0;
 let percentage = 0;
 let candidateName = '';
 let recruiterName ='';
 
+
  function calculatectc(){
-    let ctc= 0;
+    
     //getting values from html page
  takehome = parseInt(document.getElementById("takehome").value);
  candidateName = document.getElementById("candidatename").value;
  recruiterName = document.getElementById("recruitername").value;
  console.log(candidateName,recruiterName);
          //calculate overall ctc = takehome*100 /90
-    ctc = parseInt((100*takehome)/90) ;
-    this.tds =( parseInt(ctc)).toLocaleString("en-us");
+    this.ctc = parseInt((100*takehome)/90) ;
+    this.tds =( parseInt(this.ctc)).toLocaleString("en-us");
      //pushing value to the html
     document.getElementById("tds").innerHTML = this.tds;
+    
     //getting last three digits to round off
-    const getlastthree = String(this.tds).slice(-3);
-    let lastdigits = Number(getlastthree);
-    let parsectc = parseInt(ctc);
-    let roundoff = String(parsectc).slice(0,-3);
-    let needToAdd = 0;
-     if(lastdigits === 0 || lastdigits === 500){
-      document.getElementById("roundoff").innerHTML = this.tds;    
-    }else if(lastdigits<500){
-      this.lastdigits=500;
-      roundoff= roundoff+500;
-      document.getElementById("roundoff").innerHTML = parseInt(roundoff).toLocaleString("en-us");
-     }
-    else{
-          needToAdd = 1000-lastdigits;
-          roundoff = parseInt(roundoff);
-          roundoff = parsectc + needToAdd;
-          document.getElementById("roundoff").innerHTML = roundoff.toLocaleString("en-us");
-    }
+    console.log("from roundoff");
+  const getlastthree = String(this.tds).slice(-3);
+  let lastdigits = Number(getlastthree);
+  let parsectc = parseInt(this.ctc);
+  let roundoff = String(parsectc).slice(0,-3);
+  let needToAdd = 0;
+   if(lastdigits === 0 || lastdigits === 500){
+    document.getElementById("roundoff").innerHTML = this.tds;    
+  }else if(lastdigits<500){
+    this.lastdigits=500;
+    roundoff= roundoff+500;
+    document.getElementById("roundoff").innerHTML = parseInt(roundoff).toLocaleString("en-us");
+   }
+  else{
+        needToAdd = 1000-lastdigits;
+        roundoff = parseInt(roundoff);
+        roundoff = parsectc + needToAdd;
+        document.getElementById("roundoff").innerHTML = roundoff.toLocaleString("en-us");
+  }
     display(takehome,roundoff);
+    let checker = document.getElementById("enterctc").value;
+    if(checker !== ''){
+      console.log("success");
+      calculatetakehome();
+    }
+    
     copytext();
+    //document.getElementById("enterctc").value = this.ctc;
+}
+function calculatetakehome(){
+  let currentCtc = 0;
+  let taketohome =0 ;
+  
+  currentCtc = parseInt(document.getElementById("enterctc").value);
+  taketohome= (90*currentCtc)/100;
+    
+    document.getElementById("takehome").value = taketohome;
+     
+  display(taketohome,currentCtc);
+  
+  
+  //display(parseInt(taketohome),currentCtc);
+
 }
  function calculatehike(){
 //ctc/100 * percentage
@@ -84,6 +110,8 @@ document.getElementById("thome").innerHTML = takeh;
    // Copy the text inside the text field
   navigator.clipboard.writeText(copyText);
   }
+ }
+ function roundIt(){
   
 
- }
+}
