@@ -32,6 +32,7 @@ h3{
     text-align: center;
     justify-content: center;
     padding-top: 25px;
+
 }
 .input-field{
     background-color: rgb(250, 243, 250);
@@ -73,6 +74,8 @@ h3{
     padding:20px 20px;
     margin-top: 20px;
     padding-top: 20px;
+    margin-right: 400px;
+    margin-left: 400px;
 }
 .pastecontent{
     margin-top: 10px;
@@ -98,7 +101,7 @@ h3{
 }
 .container{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     gap: 48px;
     justify-content: center;
     
