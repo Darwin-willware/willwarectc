@@ -11,27 +11,31 @@
 </head>
 <body>
     <!-- Image and text -->
-    <nav class="navbar navbar-default">
-        <div class="container-fluid">
-            
-          <div class="navbar-header">
-            <img class = "navbar-brand "src="./willware.jfif" alt="">
-            <a class="navbar-brand" href="#">WILLWARE TECHNOLOGIES</a>
-          </div>
-          <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Home</a></li>
-            <li><a href="#">Page 1</a></li>
-            <li><a href="#">Page 2</a></li>
-            <li><a href="#">Page 3</a></li>
-          </ul>
-        </div>
-      </nav>
-    <h1 class = "title"><img src="./willware.jfif" alt=""></h1>
+    
+    <div id="topheader">
+        <nav class="navbar navbar-default " id="navbar_top">
+            <div class="container-fluid">
+                
+              <div class="navbar-header">
+                <a href="" class = "navbar-brand img-size " ></a>
+                <a class="navbar-brand" href="#">WILLWARE TECHNOLOGIES</a>
+              </div>
+              <ul class="nav navbar-nav">
+                <li class="active"><a href="#ctk">Home</a></li>
+                <li><a href="#ctk">CTK</a></li>
+                <li><a href="#margin">MARGIN</a></li>
+                <li><a href="#hike">HIKE</a></li>
+              </ul>
+            </div>
+          </nav>
+    </div>
+
+    
     <h3 class = "subtitle">CTC CALCULATOR</h3>
-    <div class = "container">
+    <div class = "container ">
         <!-- div to display in row -->
-        <div class="row-div">
-            <div class = "input-set panel panel-primary">
+        <div >
+            <div class = "input-set panel panel-primary" id="ctk">
                 <h3 class=" panel-heading">TAKEHOME  CTC CALCULATOR</h3>
                 <input class="col-xl-2" type="number" id = "takehome" 
                 placeholder="Enter takehome" value = "">
@@ -49,14 +53,14 @@
             <p class="well"> Exact CTC is    <span class="spanner" id = "tds" >0</span></p>
             </div>
                     <!-- new set to calculate profit percentage -->
-        <div class = "input-set1 panel panel-primary">
+        <div class = "input-set1 panel panel-primary" id = "margin">
             <h3 class=" panel-heading">MARGIN CALCULATOR</h3>
             <input class="col-xl-2" type="number" id = "clientctc" 
                 placeholder="Enter clientctc" value = "">
                 <input class="col-xl-2" type="number" id = "candidatectc" 
                 placeholder="Enter candidatectc" value = "">
                 <button class="btn btn-primary col-md-2" id ="myBtn2"
-                onclick="marginCalculator()">CTC</button>
+                onclick="marginCalculator()">MARGIN</button>
 
                 <p class="well"> Percentage is    
                     <span class="spanner" id = "profitpercent" >0</span>%</p>
@@ -84,14 +88,14 @@
               </div>
         
 
-        <div class = "input-set panel panel-primary">
+        <div class = "input-set panel panel-primary" id ="hike">
             <h3 class=" panel-heading">HIKE CALCULATOR</h3>
             <input class = "col-md-2" type="number" id = "ctc" 
             placeholder="Enter CTC" value = "">
             <input class = "col-md-2" type="number" id = "percentage" 
             placeholder="Enter %" value = "">
             <button class="btn btn-primary col-md-2" id ="myBtn3"
-            onclick="calculatehike()">CTC</button>
+            onclick="calculatehike()">HIKE</button>
             <br>
             <p class="well"> New CTC is    <span class="spanner" id = "newctc" >0</span></p>
             <p class="well"> Amount Need To Be hiked is    <span class="spanner" id = "hikeamount" >0</span></p>
@@ -101,6 +105,39 @@
     </div>
     <script>
         document.getElementById("cop").style.display = "none";
+        //to make navbar sticky
+        // window.onscroll = function() {myFunction()};
+
+        //   var navbar = document.getElementById("navbar");
+        //   var sticky = navbar.offsetTop;
+
+        //   function myFunction() {
+        //    if (window.pageYOffset >= sticky) {
+        //      navbar.classList.add("sticky")
+        //     } else {
+        //       navbar.classList.remove("sticky");
+        //     }
+        //   }
+        $( '#topheader .navbar-nav a' ).on( 'click', function () {
+	    $( '#topheader .navbar-nav' ).find( 'li.active' ).removeClass( 'active' );
+	    $( this ).parent( 'li' ).addClass( 'active' );
+        });
+        document.addEventListener("DOMContentLoaded", function(){
+		
+		window.addEventListener('scroll', function() {
+	       
+			if (window.scrollY > 50) {
+				document.getElementById('navbar_top').classList.add('fixed-top');
+				// add padding top to show content behind navbar
+				navbar_height = document.querySelector('.navbar').offsetHeight;
+				document.body.style.paddingTop = navbar_height + 'px';
+			} else {
+			 	document.getElementById('navbar_top').classList.remove('fixed-top');
+				 // remove padding top from body
+				document.body.style.paddingTop = '0';
+			} 
+		});
+	}); 
         var input = document.getElementById("takehome");
         input.addEventListener("keypress", function(event) {
           if (event.key === "Enter") {
