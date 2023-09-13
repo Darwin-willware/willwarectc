@@ -6,7 +6,25 @@ let hikeamount = 0;
 let percentage = 0;
 let candidateName = '';
 let recruiterName ='';
-
+let profitamount = 0;
+let profitmargin = 0;
+  
+ function marginCalculator(){
+      let clientctc = 0;
+      let candidatectc = 0;
+      let clientpercent = 0;
+      clientctc = parseInt(document.getElementById("clientctc").value);
+      candidatectc = parseInt(document.getElementById("candidatectc").value);
+      
+      console.log(clientctc,candidatectc);
+      clientpercent = (100*candidatectc)/clientctc;
+      console.log(clientpercent);
+      this.profitmargin = 100-clientpercent;
+      this.profitamount = clientctc-candidatectc;
+      document.getElementById("profitpercent").innerHTML = this.profitmargin.toFixed(2);
+      document.getElementById("profitamount").innerHTML = this.profitamount.toLocaleString("en-us");
+    
+ }
 
  function calculatectc(){
     
@@ -84,15 +102,16 @@ console.log(oldctc,percentage);
   emptakehomenewctc =(90*this.newctc)/100;
   console.log(emphome);
    console.log(this.newctc);
-   document.getElementById("hikeamount").innerHTML = this.hikeamount;
-   document.getElementById("newctc").innerHTML = this.newctc;
-   document.getElementById("oldtakehome").innerHTML = emphome;
-   document.getElementById("newtakehome").innerHTML = emptakehomenewctc;
+   document.getElementById("hikeamount").innerHTML = this.hikeamount.toLocaleString("en-us");
+   document.getElementById("newctc").innerHTML = this.newctc.toLocaleString("en-us");
+   document.getElementById("oldtakehome").innerHTML = emphome.toLocaleString("en-us");
+   document.getElementById("newtakehome").innerHTML = emptakehomenewctc.toLocaleString("en-us");
    
 
  }
  function display(takeh,ctcto){
-
+    
+  document.getElementById("cop").style.display = "block";
 document.getElementById("cname").innerHTML = candidateName;
 document.getElementById("rname").innerHTML = recruiterName;
 document.getElementById("octc").innerHTML = ctcto;

@@ -5,30 +5,73 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
 <body>
-    <h1 class = "title">WILLWARE TECHNOLOGIES</h1>
+    <!-- Image and text -->
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            
+          <div class="navbar-header">
+            <img class = "navbar-brand "src="./willware.jfif" alt="">
+            <a class="navbar-brand" href="#">WILLWARE TECHNOLOGIES</a>
+          </div>
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Home</a></li>
+            <li><a href="#">Page 1</a></li>
+            <li><a href="#">Page 2</a></li>
+            <li><a href="#">Page 3</a></li>
+          </ul>
+        </div>
+      </nav>
+    <h1 class = "title"><img src="./willware.jfif" alt=""></h1>
     <h3 class = "subtitle">CTC CALCULATOR</h3>
     <div class = "container">
-        <div class = "center">
-            <input class = "input-field" type="number" id = "takehome" 
-            placeholder="Enter takehome" value = "">
-            <input class = "input-field" type="text" id = "candidatename" 
-            placeholder="Enter Candidate Name" value = "">
-            <input class = "input-field" type="text" id = "recruitername" 
-            placeholder="Enter Recruiter Name" value = "">
-            <input class = "input-field" type="number" id = "enterctc" 
-            placeholder="Enter CTC" value = "">
-
-            <button class="btn" onclick="calculatectc()">CTC</button>
+        <!-- div to display in row -->
+        <div class="row-div">
+            <div class = "input-set panel panel-primary">
+                <h3 class=" panel-heading">TAKEHOME  CTC CALCULATOR</h3>
+                <input class="col-xl-2" type="number" id = "takehome" 
+                placeholder="Enter takehome" value = "">
+                <input class="col-xl-2" type="text" id = "candidatename" 
+                placeholder="Enter Candidate Name" value = "">
+                <input class="col-xl-2" type="text" id = "recruitername" 
+                placeholder="Enter Recruiter Name" value = "">
+                <input class="col-xl-2" type="number" id = "enterctc" 
+                placeholder="Enter CTC" value = "">
+            <button class="btn btn-primary col-md-2" id ="myBtn"
+            onclick="calculatectc()">CTC</button>
             <br>
-            <p class="titl"> Average CTC is    <span class="spanner" id = "roundoff" >0</span></p>
-            <p class="titl"> Exact CTC is    <span class="spanner" id = "tds" >0</span></p>
-           
-                
+            
+            <p class="well"> Average CTC is    <span class="spanner" id = "roundoff" >0</span></p>
+            <p class="well"> Exact CTC is    <span class="spanner" id = "tds" >0</span></p>
+            </div>
+                    <!-- new set to calculate profit percentage -->
+        <div class = "input-set1 panel panel-primary">
+            <h3 class=" panel-heading">MARGIN CALCULATOR</h3>
+            <input class="col-xl-2" type="number" id = "clientctc" 
+                placeholder="Enter clientctc" value = "">
+                <input class="col-xl-2" type="number" id = "candidatectc" 
+                placeholder="Enter candidatectc" value = "">
+                <button class="btn btn-primary col-md-2" id ="myBtn2"
+                onclick="marginCalculator()">CTC</button>
+
+                <p class="well"> Percentage is    
+                    <span class="spanner" id = "profitpercent" >0</span>%</p>
+            <p class="well"> Amount is    
+                <span class="spanner" id = "profitamount" >0</span></p>
         </div>
-        <div  class = pastecontent id = "copytext">
-            <p> Dear <span id ="cname">CN</span>,</p>
+  
+        </div>
+       
+        
+       
+        <div class="panel panel-primary" id="cop">
+                <div class="panel-heading">SEE HERE</div>
+                <div class="panel-body" id = "copytext">
+                    <p> Dear <span id ="cname">CN</span>,</p>
             <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; I trust your recent conversation with <span id ="rname">RN</span> 
                 was fruitful.
                  Please take a moment to review the following job description and budget information.
@@ -37,25 +80,56 @@
                   scheduling your interview shortly.</p>
             <p>Budget: <span id="octc">CTC</span> per month (Inclusive of 10% TDS deduction). Take home :
                  <span id = "thome">THOME</span> .</p>
-    
-        </div>
+                </div>
+              </div>
+        
 
-        <div class = "center">
-            <input class = "input-field" type="number" id = "ctc" 
+        <div class = "input-set panel panel-primary">
+            <h3 class=" panel-heading">HIKE CALCULATOR</h3>
+            <input class = "col-md-2" type="number" id = "ctc" 
             placeholder="Enter CTC" value = "">
-            <input class = "input-field" type="number" id = "percentage" 
+            <input class = "col-md-2" type="number" id = "percentage" 
             placeholder="Enter %" value = "">
-            <button class="btn" onclick="calculatehike()">CTC</button>
+            <button class="btn btn-primary col-md-2" id ="myBtn3"
+            onclick="calculatehike()">CTC</button>
             <br>
-            <p class="titl"> New CTC is    <span class="spanner" id = "newctc" >0</span></p>
-            <p class="titl"> Amount Need To Be hiked is    <span class="spanner" id = "hikeamount" >0</span></p>
-            <p class="titl"> PREV Takehome    <span class="spanner" id = "oldtakehome" >0</span></p>
-            <p class="titl"> NEW Takehome    <span class="spanner" id = "newtakehome" >0</span></p>
+            <p class="well"> New CTC is    <span class="spanner" id = "newctc" >0</span></p>
+            <p class="well"> Amount Need To Be hiked is    <span class="spanner" id = "hikeamount" >0</span></p>
+            <p class="well"> PREV Takehome    <span class="spanner" id = "oldtakehome" >0</span></p>
+            <p class="well"> NEW Takehome    <span class="spanner" id = "newtakehome" >0</span></p>
         </div>
     </div>
-    
-   
-
+    <script>
+        document.getElementById("cop").style.display = "none";
+        var input = document.getElementById("takehome");
+        input.addEventListener("keypress", function(event) {
+          if (event.key === "Enter") {
+            event.preventDefault();
+            document.getElementById("myBtn").click();
+          }
+        });
+        var input1 = document.getElementById("enterctc");
+        input1.addEventListener("keypress", function(event) {
+          if (event.key === "Enter") {
+            event.preventDefault();
+            document.getElementById("myBtn").click();
+          }
+        });
+        var input2 = document.getElementById("candidatectc");
+        input2.addEventListener("keypress", function(event) {
+          if (event.key === "Enter") {
+            event.preventDefault();
+            document.getElementById("myBtn2").click();
+          }
+        });
+        var input3 = document.getElementById("ctc");
+        input3.addEventListener("keypress", function(event) {
+          if (event.key === "Enter") {
+            event.preventDefault();
+            document.getElementById("myBtn3").click();
+          }
+        });
+        </script>
     <script src="./one.js"></script>
 </body>
 </html>
