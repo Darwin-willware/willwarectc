@@ -18,7 +18,7 @@
     
     <div id="topheader">
         <nav class="navbar navbar-default " id="navbar_top">
-            <div class="container-fluid">
+            <div class="container">
                 
               <div class="navbar-header">
                 <a href="" class = "navbar-brand img-size " ></a>
@@ -26,9 +26,9 @@
               </div>
               <ul class="nav navbar-nav">
                 <li class="active"><a href="#home">Home</a></li>
-                <li><a href="#ctk">CTC</a></li>
-                <li><a href="#margin">MARGIN</a></li>
-                <li><a href="#hike">HIKE</a></li>
+                <li><a href="takehome.html">CTC</a></li>
+                <li><a href="margin.html">MARGIN</a></li>
+                <li><a href="hike.html">HIKE</a></li>
                 <li><a href="calci.html">CALCI</a></li>
               </ul>
             </div>
@@ -71,74 +71,16 @@
     <div class = "container ">
       
         <!-- div to display in row -->
-        <div class="top-space" id="ctk">
-            <div class = "input-set panel panel-primary" >
-                <h3 class=" panel-heading">TAKEHOME  CTC CALCULATOR</h3>
-                <input class="col-xl-2" type="number" id = "takehome" 
-                placeholder="Enter takehome" value = "">
-                <input class="col-xl-2" type="text" id = "candidatename" 
-                placeholder="Enter Candidate Name" value = "">
-                <input class="col-xl-2" type="text" id = "recruitername" 
-                placeholder="Enter Recruiter Name" value = "">
-                <input class="col-xl-2" type="number" id = "enterctc" 
-                placeholder="Enter CTC" value = "">
-            <button class="btn btn-primary col-md-2" id ="myBtn"
-            onclick="calculatectc()">CTC</button>
-            <br>
-            
-            <p class="well"> Average CTC is    <span class="spanner" id = "roundoff" >0</span></p>
-            <p class="well"> Exact CTC is    <span class="spanner" id = "tds" >0</span></p>
-            </div>
-                    <!-- new set to calculate profit percentage -->
-        <div class = "input-set1 panel panel-primary" id = "margin">
-            <h3 class=" panel-heading">MARGIN CALCULATOR</h3>
-            <input class="col-xl-2" type="number" id = "clientctc" 
-                placeholder="Enter clientctc" value = "">
-                <input class="col-xl-2" type="number" id = "candidatectc" 
-                placeholder="Enter candidatectc" value = "">
-                <button class="btn btn-primary col-md-2" id ="myBtn2"
-                onclick="marginCalculator()">MARGIN</button>
-
-                <p class="well"> Percentage is    
-                    <span class="spanner" id = "profitpercent" >0</span>%</p>
-            <p class="well"> Amount is    
-                <span class="spanner" id = "profitamount" >0</span></p>
-        </div>
+         
   
         </div>
        
         
        
-        <div class="panel panel-primary" id="cop">
-                <div class="panel-heading">SEE HERE</div>
-                <div class="panel-body" id = "copytext">
-                    <p> Dear <span id ="cname">CN</span>,</p>
-            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; I trust your recent conversation with <span id ="rname">RN</span> 
-                was fruitful.
-                 Please take a moment to review the following job description and budget information.
-                  Once you've had a chance to assess it, please confirm your acceptance. Our team has 
-                  already initiated the process with our client, and we'll be 
-                  scheduling your interview shortly.</p>
-            <p>Budget: <span id="octc">CTC</span> per month (Inclusive of 10% TDS deduction). Take home :
-                 <span id = "thome">THOME</span> .</p>
-                </div>
-              </div>
+        
         
 
-        <div class = "input-set panel panel-primary" id ="hike">
-            <h3 class=" panel-heading">HIKE CALCULATOR</h3>
-            <input class = "col-md-2" type="number" id = "ctc" 
-            placeholder="Enter CTC" value = "">
-            <input class = "col-md-2" type="number" id = "percentage" 
-            placeholder="Enter %" value = "">
-            <button class="btn btn-primary col-md-2" id ="myBtn3"
-            onclick="calculatehike()">HIKE</button>
-            <br>
-            <p class="well"> New CTC is    <span class="spanner" id = "newctc" >0</span></p>
-            <p class="well"> Amount Need To Be hiked is    <span class="spanner" id = "hikeamount" >0</span></p>
-            <p class="well"> PREV Takehome    <span class="spanner" id = "oldtakehome" >0</span></p>
-            <p class="well"> NEW Takehome    <span class="spanner" id = "newtakehome" >0</span></p>
-        </div>
+        
     </div>
     <script>
         document.getElementById("cop").style.display = "none";

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+<link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <div id="topheader">
+        <nav class="navbar navbar-default " id="navbar_top">
+            <div class="container">
+                
+              <div class="navbar-header">
+                <a href="" class = "navbar-brand img-size " ></a>
+                <a class="navbar-brand" href="#">WILLWARE TECHNOLOGIES</a>
+              </div>
+              <ul class="nav navbar-nav">
+                <li ><a href="index.html">Home</a></li>
+                <li><a href="takehome.html">CTC</a></li>
+                <li class="active"><a href="margin.html">MARGIN</a></li>
+                <li><a href="hike.html">HIKE</a></li>
+                <li><a href="calci.html">CALCI</a></li>
+              </ul>
+            </div>
+          </nav>
+    </div>
+
+
+
+
+        <!-- new set to calculate profit percentage -->
+        <div class = "input-set1 panel panel-primary" id = "margin">
+         <h3 class=" panel-heading">MARGIN CALCULATOR</h3>
+         <input class="col-xl-2" type="number" id = "clientctc" 
+             placeholder="Enter clientctc" value = "">
+             <input class="col-xl-2" type="number" id = "candidatectc" 
+             placeholder="Enter candidatectc" value = "">
+             <button class="btn btn-primary col-xl-2" id ="myBtn2"
+             onclick="marginCalculator()">MARGIN</button>
+            <p class="well"> Percentage is    
+         <span class="spanner" id = "profitpercent" >0</span>%</p>
+         <p class="well"> Amount is    
+            <span class="spanner" id = "profitamount" >0</span></p>
+    </div>
+    
+
+        <!-- scripts -->
+        <script>
+            
+            $( '#topheader .navbar-nav a' ).on( 'click', function () {
+            $( '#topheader .navbar-nav' ).find( 'li.active' ).removeClass( 'active' );
+            $( this ).parent( 'li' ).addClass( 'active' );
+            });
+            
+            
+            var input2 = document.getElementById("candidatectc");
+            input2.addEventListener("keypress", function(event) {
+              if (event.key === "Enter") {
+                event.preventDefault();
+                document.getElementById("myBtn2").click();
+              }
+            });
+            
+            </script>
+        <script src="./one.js"></script>
+</body>
+</html>
