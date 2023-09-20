@@ -8,6 +8,7 @@ let candidateName = '';
 let recruiterName ='';
 let profitamount = 0;
 let profitmargin = 0;
+
   
  function marginCalculator(){
       let clientctc = 0;
@@ -47,7 +48,8 @@ let profitmargin = 0;
   let roundoff = String(parsectc).slice(0,-3);
   let needToAdd = 0;
    if(lastdigits === 0 || lastdigits === 500){
-    document.getElementById("roundoff").innerHTML = this.tds;    
+    document.getElementById("roundoff").innerHTML = this.tds; 
+    roundoff = this.tds;   
   }else if(lastdigits<500){
     this.lastdigits=500;
     roundoff= roundoff+500;
@@ -59,12 +61,16 @@ let profitmargin = 0;
         roundoff = parsectc + needToAdd;
         document.getElementById("roundoff").innerHTML = roundoff.toLocaleString("en-us");
   }
+  console.log('takehome');
+  console.log(takehome);
+  console.log(roundoff);
+  console.log("roundit")
     display(takehome,roundoff);
-    let checker = document.getElementById("enterctc").value;
-    if(checker !== ''){
-      console.log("success");
-      calculatetakehome();
-    }
+    // let checker = document.getElementById("enterctc").value;
+    // if(checker !== ''){
+    //   console.log("success");
+    //   calculatetakehome();
+    // }
     
     copytext();
     //document.getElementById("enterctc").value = this.ctc;
@@ -75,13 +81,19 @@ function calculatetakehome(){
   
   currentCtc = parseInt(document.getElementById("enterctc").value);
   taketohome= (90*currentCtc)/100;
+  console.log(taketohome)
     
-    document.getElementById("takehome").value = taketohome;
-    document.getElementById("tds").innerHTML = currentCtc.toLocaleString("en-us");
+    //document.getElementById("takehome").value = taketohome;
+    document.getElementById("tds").innerHTML = taketohome.toLocaleString("en-us");
     document.getElementById("roundoff").innerHTML = currentCtc.toLocaleString("en-us");
+    candidateName = document.getElementById("candidatename").value;
+    recruiterName = document.getElementById("recruitername").value;
   display(taketohome,currentCtc);
+  copytext();
   
-  
+  // setTimeout(() => {
+  //   document.location.reload();
+  // }, 3000);
   //display(parseInt(taketohome),currentCtc);
 
 }
@@ -110,13 +122,16 @@ console.log(oldctc,percentage);
 
  }
  function display(takeh,ctcto){
-    
+    if(candidateName === '' || recruiterName === ''){
+      return 0;
+ }else{
+  console.log(takeh,ctcto)
   document.getElementById("cop").style.display = "block";
 document.getElementById("cname").innerHTML = candidateName;
 document.getElementById("rname").innerHTML = recruiterName;
 document.getElementById("octc").innerHTML = ctcto;
 document.getElementById("thome").innerHTML = takeh;
-
+ }
  }
  function copytext(){
   if(candidateName === '' || recruiterName === ''){

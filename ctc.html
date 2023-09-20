@@ -21,8 +21,8 @@
               </div>
               <ul class="nav navbar-nav">
                 <li ><a href="index.html">Home</a></li>
-                <li><a href="ctc.html">CTC</a></li>
-                <li class="active"><a href="takehome.html">TAKEHOME</a></li>
+                <li class="active"><a href="ctc.html">CTC</a></li>
+                <li ><a href="takehome.html">TAKEHOME</a></li>
                 <li><a href="margin.html">MARGIN</a></li>
                 <li><a href="hike.html">HIKE</a></li>
                 <li><a href="calci.html">CALCI</a></li>
@@ -35,20 +35,20 @@
 
     <div class="top-space" id="ctk">
         <div class = "input-set panel panel-primary" >
-            <h3 class=" panel-heading">TAKEHOME CALCULATOR</h3>
-            <input class="col-xl-2" type="number" id = "takehome" 
-            placeholder="Enter takehome" onfocus="this.value=0" value = "">
+            <h3 class=" panel-heading">    CTC CALCULATOR</h3>
+            <input class="col-xl-2" type="number" id = "enterctc" 
+            placeholder="Enter ctc"  value = "">
             <input class="col-xl-2" type="text" id = "candidatename" 
             placeholder="Enter Candidate Name" value = "">
             <input class="col-xl-2" type="text" id = "recruitername" 
             placeholder="Enter Recruiter Name" value = "">
             
-        <button class="btn btn-primary col-md-2" id ="myBtn"
-        onclick="calculatectc()">CTC</button>
+        <button class="btn btn-primary col-xl-2" id ="myBtn"
+        onclick="calculatetakehome()">TAKEHOME</button>
         <br>
         
-        <p class="well"> Average CTC is    <span class="spanner" id = "roundoff" >0</span></p>
-        <p class="well"> Exact CTC is    <span class="spanner" id = "tds" >0</span></p>
+        <p class="well"> CTC is    <span class="spanner" id = "roundoff" >0</span></p>
+        <p class="well"> TAKEHOME is    <span class="spanner" id = "tds" >0</span></p>
         </div>
       
         <div class="panel panel-primary" id="cop">
@@ -87,14 +87,14 @@
             $( this ).parent( 'li' ).addClass( 'active' );
             });
             
-            var input = document.getElementById("takehome");
-            input.addEventListener("keypress", function(event) {
+            
+            var input1 = document.getElementById("enterctc");
+            input1.addEventListener("keypress", function(event) {
               if (event.key === "Enter") {
                 event.preventDefault();
                 document.getElementById("myBtn").click();
               }
             });
-            
             
           
             </script>
