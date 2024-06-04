@@ -37,11 +37,15 @@ function convert(curr1,curr2,inputVal,canset){
   fetch(`https://${host}/latest?amount=${inputVal}&from=${curr1}&to=${curr2}`)
   .then(resp => resp.json())
   .then((data) => {
+    console.log(data);
+    // console.log("can now ",data?.rates?.INR);
     if(inputVal == 1){
-      currentIndianRupees = Object.values(data.rates)[0];
+      currentIndianRupees = data?.rates?.INR;
     }
     if (canset) {
+      
       document.getElementById('result').value = Object.values(data.rates)[0];
+
     }
           
   });

@@ -7,11 +7,32 @@
     
     <title>SALARY CALCULATOR </title>
     <link rel="stylesheet" href="styless.css">
+    
    
 
 </head>
 <body>
-
+    <a href = "index.html" class="goback">&#8656;</a>
+    <!-- <div id="topheader">
+        <nav class="navbar navbar-default " id="navbar_top">
+            <div class="container">
+                
+              <div class="navbar-header">
+                <a href="willware.jfif" class = "navbar-brand img-size " ></a>
+                <a class="navbar-brand" href="#">WILLWARE TECHNOLOGIES</a>
+              </div>
+              <ul class="nav navbar-nav">
+                <li ><a href="index.html">Home</a></li>
+                <li><a href="ctc.html">CTC</a></li>
+                <li><a href="takehome.html">TAKEHOME</a></li>
+                <li><a href="margin.html">MARGIN</a></li>
+                <li ><a href="hike.html">HIKE</a></li>
+                <li class="active"><a href="converter.html">USD TO INR</a></li>
+                <li><a href="calci.html">CALCI</a></li>
+              </ul>
+            </div>
+          </nav>
+    </div> -->
    
 
  <div class="container currencyconvertersection">
@@ -39,26 +60,19 @@
 
     
 
-    <script src="sketch.js"></script>
-</body>
-</html>
+    <!-- <script src="sketch.js"></script> -->
+
 
 <br>
 <br>
 
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>salary convertor</title>
-    <style>
+<style>
 
 html,
 body{
   font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
-  border-color: #337ab7;
+  border-color: #4ce98e;
    background-color:#fff;
    /* margin: 0; */
    /* padding: 0; */
@@ -68,9 +82,11 @@ body{
 }
 body{
     height: 110vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    /* display: inline; */
+   
+  place-items: center;
+    /* align-items: center;
+    justify-content: center; */
     border-color: #224970;
   }
 
@@ -94,6 +110,28 @@ body{
     background-color: black;
     color: white;
   }
+
+  
+  .currencyconvertersection{
+      display: none;
+    }
+  
+  #topheader .navbar-nav li > a {
+      text-transform: capitalize;
+      color: #333;
+      transition: background-color .2s, color .2s;
+      
+      &:hover,
+      &:focus {
+        background-color: #333;
+        color: #fff;
+      }
+    }
+    
+    #topheader .navbar-nav li.active > a {
+      background-color: #333;
+      color: #fff;
+    }
     </style>
  
 </head>

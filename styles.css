@@ -8,7 +8,7 @@ body {
   min-height: 100vh;
   display: grid;
   place-items: center;
-  background: #100721;
+  /* background: #100721; */
   font-family: "Ubuntu Mono", monospace;
   font-weight: 400;
 }
@@ -332,3 +332,69 @@ h3{
   opacity: 0.3;
 
 }
+
+
+
+html,
+body{
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  border-color: #4ce98e;
+   background-color:#fff;
+   /* margin: 0; */
+   /* padding: 0; */
+   font-size: 1.2rem;
+   box-sizing: border-box;
+   padding-bottom: 10px;
+}
+body{
+    height: 110vh;
+    /* display: inline; */
+    display: grid;
+  place-items: center;
+    /* align-items: center;
+    justify-content: center; */
+    border-color: #224970;
+  }
+
+  #fulldiv{
+   border-color:  #337ab7;
+   background-color: #337ab7;
+    padding: 30px 20px;
+    border-radius: 4px;
+    width: 450px;
+  }
+  #results{
+    background-color: rgb(201, 198, 198);
+    display: inline;
+   margin-bottom: 50px;
+   padding: 10px 10px;
+   border-radius: 4px;
+  
+  }
+
+  .cal{
+    background-color: black;
+    color: white;
+  }
+
+  
+  .currencyconvertersection{
+      display: none;
+    }
+  
+  #topheader .navbar-nav li > a {
+      text-transform: capitalize;
+      color: #333;
+      transition: background-color .2s, color .2s;
+      
+      &:hover,
+      &:focus {
+        background-color: #333;
+        color: #fff;
+      }
+    }
+    
+    #topheader .navbar-nav li.active > a {
+      background-color: #333;
+      color: #fff;
+    }
