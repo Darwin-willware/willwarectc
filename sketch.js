@@ -40,7 +40,9 @@ function convert(curr1,curr2,inputVal,canset){
     if(inputVal == 1){
       currentIndianRupees = Object.values(data.rates)[0];
     }
-    if (canset) {document.getElementById('result').value = Object.values(data.rates)[0];}
+    if (canset) {
+      document.getElementById('result').value = Object.values(data.rates)[0];
+    }
           
   });
 
