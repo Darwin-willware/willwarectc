@@ -72,7 +72,8 @@ let profitmargin = 0;
     //   calculatetakehome();
     // }
     
-    copytext();
+    // copytext(); //TODO kaveri
+
     //document.getElementById("enterctc").value = this.ctc;
 }
 function calculatetakehome(){
@@ -89,7 +90,7 @@ function calculatetakehome(){
     candidateName = document.getElementById("candidatename").value;
     recruiterName = document.getElementById("recruitername").value;
   display(taketohome,currentCtc);
-  copytext();
+  // copytext(); //TODO Kaveri
   
   // setTimeout(() => {
   //   document.location.reload();
@@ -133,6 +134,7 @@ document.getElementById("octc").innerHTML = ctcto;
 document.getElementById("thome").innerHTML = takeh;
  }
  }
+
  function copytext(){
   if(candidateName === '' || recruiterName === ''){
        return 0;

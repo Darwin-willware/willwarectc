@@ -1,105 +1,115 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
 
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+   <link rel="stylesheet" href="styles.css">
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
+
 <body>
-    <div id="topheader">
-        <nav class="navbar navbar-default " id="navbar_top">
-            <div class="container">
-                
-              <div class="navbar-header">
-                <a href="" class = "navbar-brand img-size " ></a>
-                <a class="navbar-brand" href="#">WILLWARE TECHNOLOGIES</a>
-              </div>
-              <ul class="nav navbar-nav">
-                <li ><a href="index.html">Home</a></li>
-                <li class="active"><a href="ctc.html">CTC</a></li>
-                <li ><a href="takehome.html">TAKEHOME</a></li>
-                <li><a href="margin.html">MARGIN</a></li>
-                <li><a href="hike.html">HIKE</a></li>
-                <li><a href="calci.html">CALCI</a></li>
-              </ul>
+   <div id="topheader">
+      <nav class="navbar navbar-default " id="navbar_top">
+         <div class="container">
+
+            <div class="navbar-header">
+               <a href="" class="navbar-brand img-size "></a>
+               <a class="navbar-brand" href="#">WILLWARE TECHNOLOGIES</a>
             </div>
-          </nav>
-    </div>
+            <ul class="nav navbar-nav">
+               <li><a href="index.html">Home</a></li>
+               <li class="active"><a href="ctc.html">CTC</a></li>
+               <li><a href="takehome.html">TAKEHOME</a></li>
+               <li><a href="margin.html">MARGIN</a></li>
+               <li><a href="hike.html">HIKE</a></li>
+               <li><a href="converter.html">SALARY CALCULATOR</a></li>
+               <li><a href="calci.html">CALCI</a></li>
+            </ul>
+         </div>
+      </nav>
+   </div>
 
 
 
-    <div class="top-space" id="ctk">
-        <div class = "input-set panel panel-primary" >
-            <h3 class=" panel-heading">    CTC CALCULATOR</h3>
-            <input class="col-xl-2" type="number" id = "enterctc" 
-            placeholder="Enter ctc"  value = "">
-            <input class="col-xl-2" type="text" id = "candidatename" 
-            placeholder="Enter Candidate Name" value = "">
-            <input class="col-xl-2" type="text" id = "recruitername" 
-            placeholder="Enter Recruiter Name" value = "">
-            
-        <button class="btn btn-primary col-xl-2" id ="myBtn"
+   <div class="top-space" id="ctk">
+      <div class="input-set panel panel-primary">
+         <h3 class=" panel-heading"> CTC CALCULATOR</h3>
+         <input class="col-xl-2" type="number" id="enterctc" placeholder="Enter ctc" value="">
+         <input class="col-xl-2" type="text" id="candidatename" placeholder="Enter Candidate Name" value="">
+         <input class="col-xl-2" type="text" id="recruitername" placeholder="Enter Recruiter Name" value="">
+
+
+         <button class="btn btn-primary col-xl-2" id ="myBtn"
         onclick="calculatetakehome()">TAKEHOME</button>
         <br>
-        
-        <p class="well"> CTC is    <span class="spanner" id = "roundoff" >0</span></p>
-        <p class="well"> TAKEHOME is    <span class="spanner" id = "tds" >0</span></p>
-        </div>
-      
-        <div class="panel panel-primary" id="cop">
-            <div class="panel-heading">SEE HERE</div>
-            <div class="panel-body" id = "copytext">
-                <p> Dear <span id ="cname">CN</span>,</p>
-        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; I trust your recent conversation with <span id ="rname">RN</span> 
-            was fruitful.
-             Please take a moment to review the following job description and budget information.
-              Once you've had a chance to assess it, please confirm your acceptance. Our team has 
-              already initiated the process with our client, and we'll be 
-              scheduling your interview shortly.</p>
-        <p>Budget: <span id="octc">CTC</span> per month (Inclusive of 10% TDS deduction). Take home :
-             <span id = "thome">THOME</span> .</p>
-            </div>
-          </div>
+         <!-- <button class="btn btn-primary col-xl-2" onclick="calculatetakehome()">TAKEHOME</button>
+         <br> -->
 
-          <!-- scripts -->
-          <script>
-            document.getElementById("cop").style.display = "none";
-            //to make navbar sticky
-            // window.onscroll = function() {myFunction()};
-    
-            //   var navbar = document.getElementById("navbar");
-            //   var sticky = navbar.offsetTop;
-    
-            //   function myFunction() {
-            //    if (window.pageYOffset >= sticky) {
-            //      navbar.classList.add("sticky")
-            //     } else {
-            //       navbar.classList.remove("sticky");
-            //     }
-            //   }
-            $( '#topheader .navbar-nav a' ).on( 'click', function () {
-            $( '#topheader .navbar-nav' ).find( 'li.active' ).removeClass( 'active' );
-            $( this ).parent( 'li' ).addClass( 'active' );
-            });
-            
-            
-            var input1 = document.getElementById("enterctc");
-            input1.addEventListener("keypress", function(event) {
-              if (event.key === "Enter") {
-                event.preventDefault();
-                document.getElementById("myBtn").click();
-              }
-            });
-            
-          
-            </script>
-        <script src="./one.js"></script>
-    
-    
+
+
+         <p class="well"> CTC is <span class="spanner" id="roundoff">0</span></p>
+         <p class="well"> TAKEHOME is <span class="spanner" id="tds">0</span></p>
+      </div>
+
+      <div class="panel panel-primary" id="cop">
+         <div class="panel-heading">SEE HERE</div>
+         <div class="panel-body" id="copytext">
+            <p> Dear <span id="cname">CN</span>,</p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; I trust your recent conversation with <span id="rname">RN</span>
+               was fruitful.
+               Please take a moment to review the following job description and budget information.
+               Once you've had a chance to assess it, please confirm your acceptance. Our team has
+               already initiated the process with our client, and we'll be
+               scheduling your interview shortly.</p>
+            <p>Budget: <span id="octc">CTC</span> per month (Inclusive of 10% TDS deduction). Take home :
+               <span id="thome">THOME</span> .
+               <!-- TODO kaveri -->
+               <span > <img class="img-icon" id="myBtn" src="copy.png" onclick="copytext()"></span>
+            </p>
+
+         </div>
+      </div>
+
+      <!-- scripts -->
+      <script>
+         document.getElementById("cop").style.display = "none";
+         //to make navbar sticky
+         // window.onscroll = function() {myFunction()};
+
+         //   var navbar = document.getElementById("navbar");
+         //   var sticky = navbar.offsetTop;
+
+         //   function myFunction() {
+         //    if (window.pageYOffset >= sticky) {
+         //      navbar.classList.add("sticky")
+         //     } else {
+         //       navbar.classList.remove("sticky");
+         //     }
+         //   }
+         $('#topheader .navbar-nav a').on('click', function () {
+            $('#topheader .navbar-nav').find('li.active').removeClass('active');
+            $(this).parent('li').addClass('active');
+         });
+
+
+         var input1 = document.getElementById("enterctc");
+         input1.addEventListener("keypress", function (event) {
+            if (event.key === "Enter") {
+               event.preventDefault();
+               document.getElementById("myBtn").click();
+            }
+         });
+
+
+      </script>
+      <script src="./one.js"></script>
+
+
 </body>
+
 </html>

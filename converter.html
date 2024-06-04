@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>SALARY CALCULATOR </title>
+    <link rel="stylesheet" href="styless.css">
+   
+
+</head>
+<body>
+
+   
+
+ <div class="container currencyconvertersection">
+        <h3>CURRENCY CONVERTER</h3>
+        
+        <div class="box">
+            <div class="left-box">
+
+
+                <select name="currency" class="currency">
+                    
+                </select>
+                <input type="number" name="" id="input">
+            </div>
+            <div class="right-box">
+                <select name="currency" class="currency"></select>
+                <input type="number" name="" id="result">
+            </div>
+        </div>
+        <div class="btn">
+            <button id="btn">CONVERT</button>
+        </div>
+        
+    </div>
+
+    
+
+    <script src="sketch.js"></script>
+</body>
+</html>
+
+<br>
+<br>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>salary convertor</title>
+    <style>
+
+html,
+body{
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  border-color: #337ab7;
+   background-color:#fff;
+   /* margin: 0; */
+   /* padding: 0; */
+   font-size: 1.2rem;
+   box-sizing: border-box;
+   padding-bottom: 10px;
+}
+body{
+    height: 110vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-color: #224970;
+  }
+
+  #fulldiv{
+   border-color:  #337ab7;
+   background-color: #337ab7;
+    padding: 30px 20px;
+    border-radius: 4px;
+    width: 450px;
+  }
+  #results{
+    background-color: rgb(201, 198, 198);
+    display: inline;
+   margin-bottom: 50px;
+   padding: 10px 10px;
+   border-radius: 4px;
+  
+  }
+
+  .cal{
+    background-color: black;
+    color: white;
+  }
+    </style>
+ 
+</head>
+<body>
+  <div></div>
+    <div id="fulldiv">
+        <p> Enter the following information to calculate your monthly salary.</p>
+                    
+        <p> USD:<br><input type="text" name="wage" id="txt_wage" value =""/></p>
+                    
+        <p>Hours Per Month:<input type="text" name="hours" id="txt_hours" value= "160"/> <br/><br/>
+        
+        <button class="cal" value="calculate" onclick="calcSalary()">Calculate</button></p>
+        
+            <p id="results">Monthly Salary:</p>
+       
+        
+                    
+        <script type="text/javascript" src="./sketch.js">
+            
+//   fetch('https://api.frankfurter.app/currencies')
+// .then(res=>res.json())
+// .then(res=>calculate(res))
+
+
+
+        
+      
+        </script>
+    </div>
+
+</body>
+</html>
+

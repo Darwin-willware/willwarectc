@@ -312,3 +312,23 @@ h3{
 	background-color: #333;
 	color: #fff;
 }
+
+/* TODO Kaveri */
+
+.img-icon{
+  width: 17px;
+  margin-left: 10px;
+  transition: background-color 0.5s;
+  opacity: 0.8;
+}
+
+.img-icon:hover{
+  cursor:copy;
+  transform: scale(1);
+  opacity: 1;
+  
+}
+.img-icon:active{
+  opacity: 0.3;
+
+}
