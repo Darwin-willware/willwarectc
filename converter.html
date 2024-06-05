@@ -7,136 +7,56 @@
     
     <title>SALARY CALCULATOR </title>
     <link rel="stylesheet" href="styless.css">
-    
-   
-
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
 <body>
-    <a href = "index.html" class="goback">&#8656;</a>
-    <!-- <div id="topheader">
+    <div id="topheader">
         <nav class="navbar navbar-default " id="navbar_top">
             <div class="container">
                 
               <div class="navbar-header">
-                <a href="willware.jfif" class = "navbar-brand img-size " ></a>
+                <a href="" class = "navbar-brand img-size " ></a>
                 <a class="navbar-brand" href="#">WILLWARE TECHNOLOGIES</a>
               </div>
               <ul class="nav navbar-nav">
                 <li ><a href="index.html">Home</a></li>
                 <li><a href="ctc.html">CTC</a></li>
                 <li><a href="takehome.html">TAKEHOME</a></li>
-                <li><a href="margin.html">MARGIN</a></li>
-                <li ><a href="hike.html">HIKE</a></li>
+                <li ><a href="margin.html">MARGIN</a></li>
+                <li><a href="hike.html">HIKE</a></li>
                 <li class="active"><a href="converter.html">USD TO INR</a></li>
                 <li><a href="calci.html">CALCI</a></li>
               </ul>
             </div>
           </nav>
-    </div> -->
-   
-
- <div class="container currencyconvertersection">
-        <h3>CURRENCY CONVERTER</h3>
-        
-        <div class="box">
-            <div class="left-box">
-
-
-                <select name="currency" class="currency">
-                    
-                </select>
-                <input type="number" name="" id="input">
-            </div>
-            <div class="right-box">
-                <select name="currency" class="currency"></select>
-                <input type="number" name="" id="result">
-            </div>
-        </div>
-        <div class="btn">
-            <button id="btn">CONVERT</button>
-        </div>
-        
     </div>
-
-    
-
-    <!-- <script src="sketch.js"></script> -->
-
-
-<br>
-<br>
-
-
-<style>
-
-html,
-body{
-  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
-  border-color: #4ce98e;
-   background-color:#fff;
-   /* margin: 0; */
-   /* padding: 0; */
-   font-size: 1.2rem;
-   box-sizing: border-box;
-   padding-bottom: 10px;
-}
-body{
-    height: 110vh;
-    /* display: inline; */
-   
-  place-items: center;
-    /* align-items: center;
-    justify-content: center; */
-    border-color: #224970;
-  }
-
-  #fulldiv{
-   border-color:  #337ab7;
-   background-color: #337ab7;
-    padding: 30px 20px;
-    border-radius: 4px;
-    width: 450px;
-  }
-  #results{
-    background-color: rgb(201, 198, 198);
-    display: inline;
-   margin-bottom: 50px;
-   padding: 10px 10px;
-   border-radius: 4px;
-  
-  }
-
-  .cal{
-    background-color: black;
-    color: white;
-  }
-
-  
-  .currencyconvertersection{
-      display: none;
-    }
-  
-  #topheader .navbar-nav li > a {
-      text-transform: capitalize;
-      color: #333;
-      transition: background-color .2s, color .2s;
-      
-      &:hover,
-      &:focus {
-        background-color: #333;
-        color: #fff;
-      }
-    }
-    
-    #topheader .navbar-nav li.active > a {
-      background-color: #333;
-      color: #fff;
-    }
-    </style>
- 
-</head>
-<body>
   <div></div>
+  <div class="container currencyconvertersection">
+    <h3>CURRENCY CONVERTER</h3>
+    
+    <div class="box">
+        <div class="left-box">
+
+
+            <select name="currency" class="currency">
+                
+            </select>
+            <input type="number" name="" id="input">
+        </div>
+        <div class="right-box">
+            <select name="currency" class="currency"></select>
+            <input type="number" name="" id="result">
+        </div>
+    </div>
+    <div class="btn">
+        <button id="btn">CONVERT</button>
+    </div>
+    
+</div>
+
+<div class="fullcontainer">
     <div id="fulldiv">
         <p> Enter the following information to calculate your monthly salary.</p>
                     
@@ -150,19 +70,10 @@ body{
        
         
                     
-        <script type="text/javascript" src="./sketch.js">
-            
-//   fetch('https://api.frankfurter.app/currencies')
-// .then(res=>res.json())
-// .then(res=>calculate(res))
-
-
-
-        
-      
-        </script>
+        <script type="text/javascript" src="./sketch.js"></script>
     </div>
-
+</div>
+    
 </body>
 </html>
 
