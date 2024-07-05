@@ -1,0 +1,143 @@
+*{
+  padding: 0;
+  box-sizing: border-box;
+}
+.hole-page{
+  margin-top: 16px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+.company-address {
+  margin-left: 20px;
+}
+.p-1{
+  margin-top: 16px;
+  margin-bottom: 0px;
+  font-weight:bolder;
+}
+.p-2{
+  margin-top: 0px;
+  margin-bottom: 5px;
+}
+.company-address p {
+  font-family: 'Times New Roman';
+  font-size: medium;
+}
+.company-row1{
+  display: flex;
+}
+.table-1{
+  display: flex;
+  border:  2px solid black ;
+  width: 100%;
+  margin-top: 16px;
+  
+}
+.slip-bar{
+  display: flex;
+  align-items: center;
+}
+.t-1{
+  border-right-color: black;
+ /* background-color: lightblue;*/
+  width: 100%;
+  /* margin-top: 10px; */
+  border-right: 2px solid black;
+}
+.t-class{
+  padding: 5px;
+}
+.i-class{
+  padding:2px 10px 0px 30px;
+}
+.t-2{
+  /*background-color: lightpink;*/
+  width: 100%;
+}
+.pay-slip-note1{
+  margin-bottom: 0px;
+}
+.pay-slip-note2{
+  margin-top: 2px;
+}
+.Amount-table{
+  border: 2px solid black;
+  width: 100%;
+  margin-top: 16px;
+}
+.t1-class{
+  padding: 10px;
+  border-color: black;
+}
+.second-row{
+  border: 2px solid black;
+  padding: 5px 0px 5px 12px;
+}
+
+.p-mode{
+  padding-top: 40px;
+}
+.amt-in-Words{
+  padding-top: 40px;
+}
+.Amount-2{
+  margin-right: 5px;
+}
+#netPayWords{
+  margin-top: 10px!important;
+}
+#netPay{
+  margin-bottom: 20px!important;
+}
+.tds-10{
+  padding-right: 25px;
+}
+.a-1{
+  width: 25%;
+  text-align: start;
+}
+.d-1{
+  width: 25%;
+  text-align: center;
+}
+.e-1{
+  width: 25%;
+  margin-left: 13px;
+}
+.a-2{
+  width: 25%;
+  text-align: end;
+}
+.header{
+  display:flex;
+  border: 2px solid black;
+  margin-top: 16px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  padding-right: 5px;
+}
+.row-1{
+  display:flex;
+  border: 2px solid black;
+  border-top: none;
+  border-bottom: none;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  padding-right: 5px;
+}
+.i-1{
+  width: 25%;
+  text-align: center;
+}
+.i-2{
+  width: 25%;
+  text-align: end;
+}
+.tds-1{
+  width: 25%;
+  text-align: center;
+}
+#joiningDate{
+  font-family: sans-serif !important;
+}
+

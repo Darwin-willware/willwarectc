@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+   <title>PaySlip Doc</title>
+   <link rel="stylesheet" href="pay_slip.css">
+   <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
+   <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+   <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
+</head>
+
+<body>
+   <div class="hole-page" id="generatePdf">
+      <div class="company-profile">
+         <div class="company-row1">
+            <div>
+               <img class="company-logo" src="687fefc8-cff2-4c25-8e4c-32cfee083be1.jpg" alt="sorry">
+            </div>
+            <div class="company-address">
+               <p class="p-1">Willware Technologies Pvt Ltd</p>
+               <p class="p-2">
+                  No.105,7<sup>th</sup> Block,Koramangala,Bangalore-560095
+               </p>
+               <div class="slip-bar">
+                  <!--<input type="text" placeholder="Range of Date"> -->
+                  <div id="reportrange"
+                     style="background: #fff; cursor: pointer; padding: 2px 7px 2px 0px; border-radius: none;  width: 90%">
+                     <i class="fa fa-calendar"></i>&nbsp;
+                     <span></span> <i class="fa fa-caret-down"></i>
+                  </div>
+                  <div>
+                     <p style="white-space: nowrap;">Pay Slip</p>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="table-1">
+         <div class="t-1">
+            <table>
+               <tr>
+                  <td class="t-class"><label for="Emp Name">Employee Name</label></td>
+                  <td>:</td>
+                  <td class="i-class"><input id="employeeName" type="text"></td>
+               </tr>
+               <tr>
+                  <td class="t-class"><label for="empId">Employee ID</label></td>
+                  <td>:</td>
+                  <td class="i-class"><input id="employeeId" type="text"><br></td>
+               </tr>
+               <tr>
+                  <td class="t-class"><label for="designation">Designation</label></td>
+                  <td>:</td>
+                  <td class="i-class"><input id="designation" type="text"><br></td>
+               </tr>
+               <tr>
+                  <td class="t-class"><label for="department">Department</label></td>
+                  <td>:</td>
+                  <td class="i-class"><input id="department" type="text"><br></td>
+               </tr>
+               <tr>
+                  <td class="t-class"><label for="joiningDate">Date of Joining</label></td>
+                  <td>:</td>
+                  <td class="i-class"><input id="joiningDate" type="date"><br></td>
+               </tr>
+            </table>
+         </div>
+         <div class="t-2 ">
+            <table>
+               <tr>
+                  <td class="t-class"><label for="workLocation">Work Location</label></td>
+                  <td>:</td>
+                  <td class="i-class"><input id="workLocation" type="text"><br></td>
+               </tr>
+               <tr>
+                  <td class="t-class"><label for="totalWorkingDays">Total Working Days</label></td>
+                  <td>:</td>
+                  <td class="i-class"><input id="totalWorkingDays" type="number"><br></td>
+               </tr>
+               <tr>
+                  <td class="t-class"><label for="lop">LOP Days</label></td>
+                  <td>:</td>
+                  <td class="i-class"><input id="lop" type="number"><br></td>
+               </tr>
+               <tr>
+                  <td class="t-class"><label for="WorkingDays">Working Days/Paid Days</label></td>
+                  <td>:</td>
+                  <td class="i-class"><input id="workingDays" type="number"><br></td>
+               </tr>
+            </table>
+         </div>
+      </div>
+
+      <div class="table-2">
+         <div class="header">
+            <div class="e-1">
+               <div>Earnings</div>
+            </div>
+            <div class="a-1">
+               <div>Amount(Rs)</div>
+            </div>
+            <div class="d-1">
+               <div>Deductions</div>
+            </div>
+            <div class="a-2">
+               <div>Amount(Rs)</div>
+            </div>
+         </div>
+         <div class="row-1">
+            <div class="e-1">
+               <div>Monthly Salary:</div>
+            </div>
+            <div class="i-1">
+               <div><input class="mon-sal" id="monthlySalary" type="number"></div>
+            </div>
+            <div class="tds-1">
+               <div>TDS 10% &nbsp;:</div>
+            </div>
+            <div class="i-2">
+               <div class="tds-sal" id="taxDeductionInput"></div>
+            </div>
+         </div>
+         <div class="second-row">
+            <div>
+               <label id="netPay" for="Emp Name">Net Pay <span>:</span></label>
+               <!-- <input type="number"> -->
+            </div>
+            <br>
+            <div>
+               <label id="netPayWords" class=" amt-in-Words" for="Emp Name">Amount in Words<span>:</span></label>
+               <!-- <input type="text"> -->
+            </div>
+            <div class="p-mode">
+               <label for="Emp Name">Mode of Payment<span>:</span></label>
+               <label for="Emp Name">Bank Transfer</label>
+
+            </div>
+         </div>
+      </div>
+
+      <div>
+         <p class="pay-slip-note1">Note:</p>
+         <p class="pay-slip-note2">"This payslip is computer generated;hence no signature is required."</p>
+      </div>
+   </div>
+   <button onclick="generatePayslip()">Generate PDF</button>
+
+   <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script> -->
+   <!-- <script src="path/to/jspdf.min.js"></script> -->
+
+   <script type="text/javascript">
+      var selectedMonthAndyear;
+      $(function () {
+
+         var start = moment().subtract(29, 'days');
+         var end = moment();
+
+         function cb(start, end) {
+            $('#reportrange span').html(start.format('MMMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY'));
+            selectedMonthAndyear = start;
+         }
+
+         $('#reportrange').daterangepicker({
+            startDate: start,
+            endDate: end,
+            ranges: {
+               'Today': [moment(), moment()],
+               'Yesterday': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
+               'Last 7 Days': [moment().subtract(6, 'days'), moment()],
+               'Last 30 Days': [moment().subtract(29, 'days'), moment()],
+               'This Month': [moment().startOf('month'), moment().endOf('month')],
+               'Last Month': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
+            }
+         }, cb);
+
+         cb(start, end);
+
+      });
+
+      function convertToPDF(name) {
+         const element = document.getElementById('generatePdf');
+         // console.log(name,"-----",selectedMonthAndyear);
+         let year = selectedMonthAndyear._d.getFullYear();
+         let month = moment(selectedMonthAndyear._d).format("MMMM");
+         // let month = (selectedMonthAndyear._d.getMonth() < 10? '0' : '') + (selectedMonthAndyear._d.getMonth()+1);
+         // console.log(year);
+         let nameOfTheFile = `${name}_${month}_${year}_PaySlip`;
+         var opt = {
+            filename: nameOfTheFile,            
+         };
+
+         // Generate and save the PDF
+         html2pdf().set(opt).from(element).save();
+
+      }
+      // let doc =  html2pdf(); 
+      function generatePayslip() {
+         // Create new jsPDF instance
+
+         // Collect input values
+         const employeeName = document.getElementById('employeeName').value;
+         const employeeId = document.getElementById('employeeId').value;
+         const designation = document.getElementById('designation').value;
+         const department = document.getElementById('department').value;
+         const joiningDate = document.getElementById('joiningDate').value;
+         const workLocation = document.getElementById('workLocation').value;
+         const lopDays = document.getElementById('lop').value;
+         const workingDays = document.getElementById('workingDays').value;
+         const totalWorkingDays = document.getElementById('totalWorkingDays').value;
+         const monthlySalary = parseFloat(document.getElementById('monthlySalary').value);
+         console.log(employeeName, "=====", employeeId, "====", designation)
+         // Calculate tax deduction (10% of monthly salary)
+         const taxDeduction = monthlySalary * 0.10;
+         document.getElementById("taxDeductionInput").innerText = `${taxDeduction.toFixed(0)}`;
+
+         // Calculate net pay (monthly salary - tax deduction)
+         const netPay = monthlySalary - taxDeduction;
+         document.getElementById("netPay").innerText = `Net Pay: ${netPay.toFixed(0)}`;
+
+         // Convert net pay amount into words
+         const netPayInWords = currencyToWords(Math.round(netPay));
+         console.log("----", currencyToWords(Math.round(netPay)));
+         document.getElementById("netPayWords").innerText = `Net Pay in Words: ${netPayInWords}`;
+
+         const inputs = document.querySelectorAll('input');
+         inputs.forEach(input => {
+            input.style.border = 'none';
+            input.style.boxShadow = 'none';
+         });
+
+         convertToPDF(employeeName,);
+
+      }
+
+      // Function to convert a number to words
+      const smallNumbers = ['Zero', 'One', 'Two', 'Three', 'Four', 'Five', 'Six', 'Seven', 'Eight', 'Nine', 'Ten', 'Eleven', 'Twelve', 'Thirteen', 'Fourteen', 'Fifteen', 'Sixteen', 'Seventeen', 'Eighteen', 'Nineteen'];
+      const tens = ['Twenty', 'Thirty', 'Forty', 'Fifty', 'Sixty', 'Seventy', 'Eighty', 'Ninety'];
+      const scales = ['', 'Thousand', 'Lakh', 'Crore'];
+
+      function numberToWords(n) {
+         if (n < 20) return smallNumbers[n];
+         if (n < 100) return tens[Math.floor(n / 10) - 2] + (n % 10 !== 0 ? ' ' + smallNumbers[n % 10] : '');
+         if (n < 1000) return smallNumbers[Math.floor(n / 100)] + ' Hundred' + (n % 100 !== 0 ? ' and ' + numberToWords(n % 100) : '');
+
+         let words = '';
+         let scaleIndex = 0;
+
+         while (n > 0) {
+            let chunk = n % (scaleIndex === 0 ? 1000 : 100);
+            if (chunk) {
+               let chunkInWords = numberToWords(chunk);
+               if (scaleIndex > 0) {
+                  chunkInWords += ' ' + scales[scaleIndex];
+               }
+               words = chunkInWords + (words ? ' ' + words : '');
+            }
+            n = Math.floor(n / (scaleIndex === 0 ? 1000 : 100));
+            scaleIndex++;
+         }
+
+         return words.trim();
+      }
+
+      function currencyToWords(amount) {
+         const rupees = Math.floor(amount);
+         const paise = Math.round((amount - rupees) * 100);
+
+         let rupeeWords = numberToWords(rupees) + (rupees === 1 ? ' Rupee' : ' Rupees');
+         let paiseWords = paise > 0 ? ' and ' + numberToWords(paise) + (paise === 1 ? ' Paise' : ' Paise') : '';
+
+         return rupeeWords + paiseWords;
+      }
+
+      // Example usage:
+      console.log(currencyToWords(12345678.56)); // "One Crore Twenty-Three Lakh Forty-Five Thousand Six Hundred Seventy-Eight Rupees and Fifty-Six Paise"
+      console.log(currencyToWords(1000000.99));  // "Ten Lakh Rupees and Ninety-Nine Paise"
+
+
+      console.log(currencyToWords(61687637));
+   </script>
+</body>
+
+</html>
